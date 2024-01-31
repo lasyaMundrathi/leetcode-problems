@@ -11,7 +11,7 @@ select tmp.title AS results  from
     SELECT m1.movie_id, m2.title, AVG(m1.rating) AS avg_rating 
 FROM MovieRating m1
 JOIN Movies m2 ON m1.movie_id = m2.movie_id 
-WHERE m1.created_at BETWEEN '2020-02-01' AND '2020-02-29'
+where DATE_FORMAT(created_at, '%Y%m') = '202002'
 GROUP BY m1.movie_id, m2.title
 ORDER BY avg_rating DESC,M2.title ASC
 LIMIT 1
