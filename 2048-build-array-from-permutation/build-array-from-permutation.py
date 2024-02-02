@@ -3,7 +3,6 @@ class Solution:
         l1=[]
         i=0
         for i in range(len(nums)):
-            j =nums[i]
-            l1.append(nums[j])
+            l1.append(nums[nums[i]])
         return l1       
         
