@@ -1,9 +1,11 @@
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
-        l1=[]
-        for i in accounts:
-            l1.append(sum(i))
-
-        return max(l1)
+        max_wealth = 0
+    
+        for customer in accounts:
+            wealth = sum(customer)  # Calculate the wealth for the current customer
+            max_wealth = max(max_wealth, wealth)  # Update max_wealth if necessary
+    
+        return max_wealth
     
         
