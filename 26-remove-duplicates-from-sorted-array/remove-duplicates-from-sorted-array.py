@@ -1,13 +1,11 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         i = 0  # Initialize the first pointer for the position of the last unique element
-        while i < len(nums)-1:
-            if nums[i] == nums[i + 1]:
-                nums.pop(i)
-            else:
-                i += 1
-        return len(nums)
-
-        
+        for j in range(1, len(nums)):
+            if nums[j] != nums[i]:
+                i += 1  # Move the unique element's index forward
+                nums[i] = nums[j]  # Place the new unique element at the next position
+    
+        return i + 1  # Return the number of unique elements, which is the index + 1
                 
      
